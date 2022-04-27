@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <head>
-  <title>OpenAI Quickstart</title>
+  <title>OpenAI Instant Instant Answers</title>
   <link
     rel="shortcut icon"
-    href="{{ url_for('static', filename='dog.png') }}"
+    href="{{ url_for('static', filename='cup.webp') }}"
   />
   <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 </head>
 
 <body>
-  <h3>Enter support question: </h3>
+  <h1>Instant Instant Answers</h1>
+  <img src="{{ url_for('static', filename='cup.webp') }}" class="icon" />
+  <h2>Enter support question: </h2>
   <form action="/" method="post">
-    <input type="text" name="answer" placeholder="Enter test" required />
+    <input type="text" list="questions" name="answer" placeholder="Enter test" required />
+    <datalist id="questions">
+      <option value="question1">
+      <option value="question2">
+      <option value="question3">
+    </datalist>
     <input type="submit" value="Summarize... " />
   </form>
   {% if result %}
