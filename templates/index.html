@@ -19,9 +19,29 @@
       <option value="question2">
       <option value="question3">
     </datalist>
-    <input type="submit" value="Summarize... " />
+    <input type="submit" value="Answer" />  
   </form>
-  {% if result %}
-  <div class="result">{{ result }}</div>
+
+  {% if question %}
+  <h2>Question was:  </h2>
+  <div class="result">{{ question }}</div>
+  {% endif %}
+
+
+  {% if result1 %}
+  <h3>Scenario 1 (no prompt)</h3>
+  <div class="result">{{ result1 }}</div>
+  {% endif %}
+
+  {% if result2 %}
+  <h3>Scenario 2 (with prompt step by step instructions)</h3>
+  <div class="result">{{ result2 }}</div>
+  {% endif %}
+
+  {% if result3 %}
+  <h3>Scenario 3 (with additional context through files) </h3>
+  <div class="result">{{ result3 }}</div>
+  <div class="result">Search selected document: {{ search }} </div>
+  <div class="result">with highters score : {{score}}</div>
   {% endif %}
 </body>
