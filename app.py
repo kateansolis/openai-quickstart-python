@@ -67,4 +67,19 @@ def find_selected_document(response):
         if document.score > largest_score.score:
             largest_score = document
     return largest_score
-    
+
+@app.route('/summary', methods=("GET", "POST")) 
+def summary():
+    if request.method == "POST":
+        question = request.form["description"]
+        response = openai.Completion.create(
+            engine="text-davinci-002",
+            prompt=question,
+            temperature=0.7,
+            max_tokens=256,
+            top_p=1,
+            frequency_penalty=0.0,
+            presence_penalty=0)
+        return redirect(url_for("summary", result =response))
+    result = request.args.get("result")
+    return render_template("summary.html", result=result)

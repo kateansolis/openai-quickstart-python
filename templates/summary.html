@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Summary</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='cup.webp') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <h1>Summary</h1>
+  <img src="{{ url_for('static', filename='cup.webp') }}" class="icon" />
+  <h2>Enter description: </h2>
+  <form action="summary" method="post">
+    <textarea name="description" placeholder="Enter description" required ></textarea>
+    <input type="submit" value="Answer" />  
+  </form>
+
+  {% if result %}
+  <h3>Summary:</h3>
+  <div class="result">{{ result }}</div>
+  {% endif %}
+
+
+</body>
