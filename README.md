@@ -1,4 +1,7 @@
-# OpenAI API Quickstart - Python example app
+# OpenAI API Instant Instant Answers
+
+![image](https://user-images.githubusercontent.com/104519771/165584495-a9f3a7e2-7c89-4412-b760-2fbde838b4b8.png)
+
 
 This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Flask](https://flask.palletsprojects.com/en/2.0.x/) web framework. Check out the tutorial or follow the instructions below to get set up.
 
